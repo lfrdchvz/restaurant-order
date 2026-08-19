@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy's Diner</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>Jimmy's Diner</h1>
+                <h2>The best burgers and pizzas in town</h2>
+            </div>
+        </header>
+
+        <section class="menu">
+            <div id="menu-item">
+                <!-- Aquí se inyectarán los artículos del menú desde JavaScript -->
+            </div>
+        </section>
+
+        <section class="order hidden" id="order-section">
+            <div class="order-content">
+                <h2 class="order-title">Your Order</h2>
+                <div class="order-items" id="order-items">
+                    <!-- Los artículos de la orden se inyectarán aquí -->
+                </div>
+                <div class="total-section">
+                    <span class="total-label">Total price:</span>
+                    <span class="total-price">$<span id="total-price">0.00</span></span>
+                </div>
+                <button id="place-order" class="place-order-btn">Complete order</button>
+            </div>
+        </section>
+
+        <!-- Modal de Pago -->
+        <div class="modal hidden" id="payment-modal">
+            <div class="modal-inner">
+                <h2>Enter card details</h2>
+                <form id="payment-form">
+                    <input type="text" name="fullName" placeholder="Enter your name" required>
+                    <input type="text" name="cardNumber" placeholder="Enter card number" pattern="[0-9]{16}" title="16 dígitos numéricos" required>
+                    <input type="text" name="cvv" placeholder="Enter CVV" pattern="[0-9]{3,4}" title="3 o 4 dígitos" required>
+                    <button type="submit" class="pay-btn">Pay</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
